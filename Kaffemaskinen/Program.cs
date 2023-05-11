@@ -14,7 +14,7 @@
 
 			CoffeeMachine cf2 = new CoffeeMachine(new Filter("Te"));
 			Console.WriteLine(cf2.TurnOn());
-			Console.WriteLine(cf2.FillLiquidContainer(100000, "Sodavand"));
+			Console.WriteLine(cf2.FillLiquidContainer(100000, "vand"));
 			Console.WriteLine(cf2.Brewer.Brew());
 			//cf2.FilterHolder.Filter.Ingredient = "Lars";
 			//Console.WriteLine(cf2.Brewer.Brew());
