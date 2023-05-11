@@ -2,24 +2,42 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Kaffemaskinen
 {
-	public enum CoffeeStrength {Light, Medium, Strong }
 	internal class CoffeeMachine : Machine
 	{
-		public FilterHolder? FilterHolder { get; set; }
-		public WaterContainer? WaterContainer { get; set; }
+		public FilterHolder FilterHolder { get; set; } = new FilterHolder();
 
-		public CoffeeBeanContainer? BeanContainer { get; set; }
+		
+
+		public Brewer Brewer { get; set; } = new Brewer();
+
+		public string? LiquidContained { get; set; }
 
 
-
-		public string BrewCoffee()
+		public CoffeeMachine(Filter filter)
 		{
-			GrindCoffeeBeans(beans, CoffeeStrength)
+			FilterHolder.Filter = filter;
+			Brewer.Beverage = filter.Ingredient;
+			
+		}
+
+
+		public string FillLiquidContainer(int fillLiquidAmount, string liquidType)
+		{
+			Brewer.Liquid += fillLiquidAmount;
+			LiquidContained = liquidType;
+			return $"loading {fillLiquidAmount} ml's of {liquidType} into liquid storage";
+		}
+
+		public string RemoveLiquid(int removeLiquidAmount)
+		{
+			Brewer.Liquid -= removeLiquidAmount;
+			return $"Removed {removeLiquidAmount} ml's from the liquid storage";
 		}
 	}
 }

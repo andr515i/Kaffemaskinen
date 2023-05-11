@@ -8,5 +8,16 @@ namespace Kaffemaskinen
 {
 	internal class Filter
 	{
+
+		public string? Ingredient { get; set; }
+
+		public Filter()
+		{
+
+		}
+		public Filter(string ingredient)
+		{
+			Ingredient = ingredient;
+		}
 	}
 }

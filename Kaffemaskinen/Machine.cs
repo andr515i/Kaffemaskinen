@@ -11,7 +11,7 @@ namespace Kaffemaskinen
 		public bool TurnedOn { get; protected set; } = false;
 
 	
-		public virtual string turnOn()
+		public virtual string TurnOn()
 		{
 			if (TurnedOn)
 			{
@@ -23,7 +23,7 @@ namespace Kaffemaskinen
 				return "Machine turning on";
 			}
 		}
-		public virtual string turnOff()
+		public virtual string TurnOff()
 		{
 			if (!TurnedOn)
 			{
