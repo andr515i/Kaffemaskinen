@@ -18,9 +18,10 @@ namespace Kaffemaskinen
 		{
 			if (Liquid > 100)
 			{
+				Liquid -= 100;
 				if (Beverage == null)
 				{
-					return "Brewing 1 cup of tasteless, bland and boring water................ finished brewing.";
+					return "Brewing 1 cup of tasteless, bland and boring hot water................ finished brewing.";
 				}
 				return $"brewing 1 cup of {Beverage}. . . finished brewing. ";
 			}

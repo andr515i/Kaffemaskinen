@@ -24,6 +24,11 @@
 			//Console.WriteLine(cf2.Brewer.Brew());
 			Console.WriteLine(cf2.TurnOff() + "\n\n");
 
+			CoffeeMachine cf3 = new CoffeeMachine(new Filter("Espresso"));
+			Console.WriteLine(cf3.TurnOn());
+			Console.WriteLine(cf3.FillLiquidContainer(100000, "vand"));
+			Console.WriteLine(cf3.Brewer.Brew());
+			Console.WriteLine(cf3.TurnOff() + "\n\n");
 
 			Console.Read();
 		}
